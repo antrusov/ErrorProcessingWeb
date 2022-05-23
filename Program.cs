@@ -5,6 +5,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.ConfigureEntityServices(builder.Configuration);
+builder.Services.AddLogging(configure => configure.AddConsole());
 
 //app
 var app = builder.Build();
