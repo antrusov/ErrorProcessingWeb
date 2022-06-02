@@ -2,6 +2,7 @@ using ErrorProcessingWeb.Settings;
 using SqlKata.Execution;
 using SqlKata.Compilers;
 using System.Data.SQLite;
+using ErrorProcessingWeb.Services.Entity;
 
 namespace ErrorProcessingWeb.Extensions;
 
@@ -29,6 +30,9 @@ public static class ConfigureEntityServicesExtension
         );
 
         //сервисы работы с БД
-        //...
+        services.AddTransient<HeroService>();
+        services.AddTransient<PowerService>();
+        services.AddTransient<StoryService>();
+        services.AddTransient<ParticipationService>();
     }
 }

@@ -16,5 +16,9 @@ public class StoryService
         _logger = logger;
     }
 
-    //...
+    public StoryEntity GetById(int Id) => _db.Query("Story").Where("Id", Id).FirstOrDefault<StoryEntity>();
+    public IEnumerable<StoryEntity> GetAll() => _db.Query("Story").Get<StoryEntity>();
+    public int Create(CreateStoryEntity story) => _db.Query("Story").InsertGetId<int>(story);
+    public void Update(StoryEntity story) => _db.Query("Story").Where("Id", story.Id).Update(story);
+    public void Delete(int Id) => _db.Query("Story").Where("Id", Id).Delete();
 }
