@@ -1,6 +1,6 @@
 using AutoMapper;
 
-namespace ErrorProcessingWeb.MapperProfiles;
+namespace ErrorProcessingWeb.MapperProfiles.VM;
 
 public class HeroMaps : Profile
 {
