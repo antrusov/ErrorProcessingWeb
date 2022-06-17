@@ -1,4 +1,4 @@
-namespace ErrorProcessingWeb.Models.Entity;
+namespace ErrorProcessingWeb.Models.Enums;
 
 public enum PowerRank
 {

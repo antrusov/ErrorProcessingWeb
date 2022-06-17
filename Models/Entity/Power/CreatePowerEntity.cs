@@ -1,3 +1,5 @@
+using ErrorProcessingWeb.Models.Enums;
+
 namespace ErrorProcessingWeb.Models.Entity;
 
 public class CreatePowerEntity
