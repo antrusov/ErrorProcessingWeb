@@ -9,3 +9,4 @@
 2) ActionFilter https://medium.com/geekculture/how-i-use-an-actionfilter-in-net-core-to-streamline-authorization-f12acbea7788
 3) AutoMapper (docs) https://automapper.org/ 
 4) AutoMapper (how to) https://jimmybogard.com/automapper-usage-guidelines/
+5) про Lazy регистрацию сервисов https://stackoverflow.com/questions/44934511/does-net-core-dependency-injection-support-lazyt
