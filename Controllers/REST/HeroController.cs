@@ -13,6 +13,13 @@ public class HeroController : ControllerBase
         _logger = logger;
     }
 
+    //GetList
+    //GetPlainById
+    //GetDetailedById
+    //Update
+    //Delete
+    //Create
+
     //[HttpGet(Name = "GetWeatherForecast")]
     //public IEnumerable<WeatherForecast> Get()
     //{
