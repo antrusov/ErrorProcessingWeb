@@ -7,6 +7,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.ConfigureEntityServices(builder.Configuration);
+builder.Services.ConfigureDtoServices();
+builder.Services.ConfigureVMServices();
 builder.Services.AddLogging(configure => configure.AddConsole());
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
