@@ -3,23 +3,23 @@ using ErrorProcessingWeb.Models.Entity;
 
 namespace ErrorProcessingWeb.Services.Entity;
 
-public class ParticipationService
+public class ParticipationEntityService
 {
     private readonly QueryFactory _db;
-    private readonly ILogger<ParticipationService> _logger;
+    private readonly ILogger<ParticipationEntityService> _logger;
 
-    public ParticipationService(
+    public ParticipationEntityService(
         QueryFactory db,
-        ILogger<ParticipationService> logger)
+        ILogger<ParticipationEntityService> logger)
     {
         _db = db;
         _logger = logger;
     }
 
-    public IEnumerable<ParticipationEntity> GetByHeroId(int heroId) => _db.Query("Participation").Where("HeroId", heroId).Get<ParticipationEntity>();
-    public IEnumerable<ParticipationEntity> GetByStoryId(int storyId) => _db.Query("Participation").Where("StoryId", storyId).Get<ParticipationEntity>();
-    public void Create(int heroId, int storyId) => _db.Query("Participation").Insert(new ParticipationEntity() { HeroId = heroId, StoryId = storyId });
-    public void Delete(int heroId, int storyId) => _db.Query("Participation").Where(new ParticipationEntity() { HeroId = heroId, StoryId = storyId }).Delete();
-    public void DeleteByHeroId(int heroId, int storyId) => _db.Query("Participation").Where("HeroId", heroId).Delete();
-    public void DeleteByStoryId(int heroId, int storyId) => _db.Query("Participation").Where("StoryId", storyId).Delete();
+    public async Task<IEnumerable<ParticipationEntity>> GetByHeroId(int heroId) => await _db.Query("Participation").Where("HeroId", heroId).GetAsync<ParticipationEntity>();
+    public async Task<IEnumerable<ParticipationEntity>> GetByStoryId(int storyId) => await _db.Query("Participation").Where("StoryId", storyId).GetAsync<ParticipationEntity>();
+    public async Task Create(int heroId, int storyId) => await _db.Query("Participation").InsertAsync(new ParticipationEntity() { HeroId = heroId, StoryId = storyId });
+    public async Task Delete(int heroId, int storyId) => await _db.Query("Participation").Where(new ParticipationEntity() { HeroId = heroId, StoryId = storyId }).DeleteAsync();
+    public async Task DeleteByHeroId(int heroId, int storyId) => await _db.Query("Participation").Where("HeroId", heroId).DeleteAsync();
+    public async Task DeleteByStoryId(int heroId, int storyId) => await _db.Query("Participation").Where("StoryId", storyId).DeleteAsync();
 }

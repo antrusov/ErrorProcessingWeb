@@ -30,9 +30,9 @@ public static class ConfigureEntityServicesExtension
         );
 
         //сервисы работы с БД
-        services.AddTransient<HeroService>();
-        services.AddTransient<PowerService>();
-        services.AddTransient<StoryService>();
-        services.AddTransient<ParticipationService>();
+        services.AddTransient<HeroEntityService>();
+        services.AddTransient<PowerEntityService>();
+        services.AddTransient<StoryEntityService>();
+        services.AddTransient<ParticipationEntityService>();
     }
 }

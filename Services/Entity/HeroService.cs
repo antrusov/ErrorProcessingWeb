@@ -3,22 +3,22 @@ using ErrorProcessingWeb.Models.Entity;
 
 namespace ErrorProcessingWeb.Services.Entity;
 
-public class HeroService
+public class HeroEntityService
 {
     private readonly QueryFactory _db;
-    private readonly ILogger<HeroService> _logger;
+    private readonly ILogger<HeroEntityService> _logger;
 
-    public HeroService(
+    public HeroEntityService(
         QueryFactory db,
-        ILogger<HeroService> logger)
+        ILogger<HeroEntityService> logger)
     {
         _db = db;
         _logger = logger;
     }
 
-    public HeroEntity GetById(int Id) => _db.Query("Hero").Where("Id", Id).FirstOrDefault<HeroEntity>();
-    public IEnumerable<HeroEntity> GetAll() => _db.Query("Hero").Get<HeroEntity>();
-    public int Create(CreateHeroEntity hero) => _db.Query("Hero").InsertGetId<int>(hero);
-    public void Update(HeroEntity hero) => _db.Query("Hero").Where("Id", hero.Id).Update(hero);
-    public void Delete(int Id) => _db.Query("Hero").Where("Id", Id).Delete();
+    public async Task<HeroEntity> GetById(int Id) => await _db.Query("Hero").Where("Id", Id).FirstOrDefaultAsync<HeroEntity>();
+    public async Task<IEnumerable<HeroEntity>> GetAll() => await _db.Query("Hero").GetAsync<HeroEntity>();
+    public async Task<int> Create(CreateHeroEntity hero) => await _db.Query("Hero").InsertGetIdAsync<int>(hero);
+    public async Task Update(HeroEntity hero) => await _db.Query("Hero").Where("Id", hero.Id).UpdateAsync(hero);
+    public async Task Delete(int Id) => await _db.Query("Hero").Where("Id", Id).DeleteAsync();
 }

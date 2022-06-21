@@ -3,22 +3,22 @@ using ErrorProcessingWeb.Models.Entity;
 
 namespace ErrorProcessingWeb.Services.Entity;
 
-public class PowerService
+public class PowerEntityService
 {
     private readonly QueryFactory _db;
-    private readonly ILogger<PowerService> _logger;
+    private readonly ILogger<PowerEntityService> _logger;
 
-    public PowerService(
+    public PowerEntityService(
         QueryFactory db,
-        ILogger<PowerService> logger)
+        ILogger<PowerEntityService> logger)
     {
         _db = db;
         _logger = logger;
     }
 
-    public PowerEntity GetById(int Id) => _db.Query("Power").Where("Id", Id).FirstOrDefault<PowerEntity>();
-    public IEnumerable<PowerEntity> GetAll() => _db.Query("Power").Get<PowerEntity>();
-    public int Create(CreatePowerEntity power) => _db.Query("Power").InsertGetId<int>(power);
-    public void Update(PowerEntity power) => _db.Query("Power").Where("Id", power.Id).Update(power);
-    public void Delete(int Id) => _db.Query("Power").Where("Id", Id).Delete();
+    public async Task<PowerEntity> GetById(int Id) => await _db.Query("Power").Where("Id", Id).FirstOrDefaultAsync<PowerEntity>();
+    public async Task<IEnumerable<PowerEntity>> GetAll() => await _db.Query("Power").GetAsync<PowerEntity>();
+    public async Task<int> Create(CreatePowerEntity power) => await _db.Query("Power").InsertGetIdAsync<int>(power);
+    public async Task Update(PowerEntity power) => await _db.Query("Power").Where("Id", power.Id).UpdateAsync(power);
+    public async Task Delete(int Id) => await _db.Query("Power").Where("Id", Id).DeleteAsync();
 }
