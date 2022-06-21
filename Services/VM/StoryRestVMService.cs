@@ -1,6 +1,6 @@
 using ErrorProcessingWeb.Services;
 
-namespace ErrorProcessingWeb.Services.VM;
+namespace ErrorProcessingWeb.Services.VM.REST;
 
 public class StoryRestVMService
 {

@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using ErrorProcessingWeb.Models.VM;
 using ErrorProcessingWeb.Models.VM.REST;
+using ErrorProcessingWeb.Services.VM.REST;
 
 namespace ErrorProcessingWeb.Controllers;
 
@@ -8,10 +9,14 @@ namespace ErrorProcessingWeb.Controllers;
 [Route("rest/[controller]")]
 public class HeroController : ControllerBase
 {
+    private readonly HeroRestVMService _heroRestVMService;
     private readonly ILogger<HeroController> _logger;
 
-    public HeroController(ILogger<HeroController> logger)
+    public HeroController(
+        HeroRestVMService heroRestVMService,
+        ILogger<HeroController> logger)
     {
+        _heroRestVMService = heroRestVMService;
         _logger = logger;
     }
 
@@ -23,9 +28,7 @@ public class HeroController : ControllerBase
     [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<HeroListItemVM>))]
     [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(InternalServerErrorVM))]
     public async Task<ActionResult<IEnumerable<HeroListItemVM>>> GetList ()
-    {
-        return null;
-    }
+        => Ok(await _heroRestVMService.GetAll());
 
     //GetPlainById
     //GetDetailedById
