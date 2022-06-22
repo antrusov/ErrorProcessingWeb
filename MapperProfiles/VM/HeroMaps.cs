@@ -9,5 +9,6 @@ public class HeroMaps : Profile
     public HeroMaps()
     {
         CreateMap<HeroDto, HeroVM>();
+        CreateMap<HeroDto, HeroListItemVM>();
     }
 }

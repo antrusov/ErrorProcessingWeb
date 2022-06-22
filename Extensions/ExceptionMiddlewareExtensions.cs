@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Diagnostics;
 using System.Text.Json;
 using System.Net;
 using System.ComponentModel.DataAnnotations;
+using ErrorProcessingWeb.Models.VM;
 
 namespace ErrorProcessingWeb.Extensions;
 
@@ -24,7 +25,10 @@ public static class ExceptionMiddlewareExtensions
                 ValidationException ex => ProcessValidationException(ex),
                 AggregateException ex => ProcessAggregateException(ex),
                 //...
-                _ => (HttpStatusCode.OK, new {})
+                _ => (HttpStatusCode.InternalServerError, new InternalServerErrorVM() {
+                    Message = exception.Message,
+                    Type = exception.GetType().ToString()
+                })
             };
 
             //записать в лог
