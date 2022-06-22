@@ -3,6 +3,8 @@
 * dotnet add package SqlKata.Execution
 * dotnet add package AutoMapper
 * dotnet add package AutoMapper.Extensions.Microsoft.DependencyInjection
+* dotnet dev-certs https --trust
+
 
 todo:
 * авторизация
