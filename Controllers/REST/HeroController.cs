@@ -30,21 +30,27 @@ public class HeroController : ControllerBase
     public async Task<ActionResult<IEnumerable<HeroListItemVM>>> GetList ()
         => Ok(await _heroRestVMService.GetAll());
 
-    //GetPlainById
-    //GetDetailedById
+    /// <summary>
+    /// Получить супергероя.
+    /// </summary>
+    /// <returns>Супергерой.</returns>
+    [HttpGet("get/{id}")]
+    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(HeroVM))]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(InternalServerErrorVM))]
+    public async Task<ActionResult<HeroVM>> Get (int id)
+        => Ok(await _heroRestVMService.Get(id));
+
+    /// <summary>
+    /// Получить супергероя с дополнительными данными.
+    /// </summary>
+    /// <returns>Супергерой c дополнительными данными.</returns>
+    [HttpGet("get-with-extras/{id}")]
+    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(HeroVM))]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(InternalServerErrorVM))]
+    public async Task<ActionResult<HeroVM>> GetWithExtras (int id)
+        => Ok(await _heroRestVMService.GetWithExtras(id));
+
     //Update
     //Delete
     //Create
-
-    //[HttpGet(Name = "GetWeatherForecast")]
-    //public IEnumerable<WeatherForecast> Get()
-    //{
-    //    return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-    //    {
-    //        Date = DateTime.Now.AddDays(index),
-    //        TemperatureC = Random.Shared.Next(-20, 55),
-    //        Summary = Summaries[Random.Shared.Next(Summaries.Length)]
-    //    })
-    //    .ToArray();
-    //}
 }

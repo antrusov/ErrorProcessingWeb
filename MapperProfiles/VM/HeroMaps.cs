@@ -10,5 +10,6 @@ public class HeroMaps : Profile
     {
         CreateMap<HeroDto, HeroVM>();
         CreateMap<HeroDto, HeroListItemVM>();
+        CreateMap<HeroWithExtrasDto, HeroVM>();
     }
 }

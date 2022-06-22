@@ -20,3 +20,4 @@ todo:
 5) про Lazy регистрацию сервисов https://stackoverflow.com/questions/44934511/does-net-core-dependency-injection-support-lazyt
 6) Cache (Redis) - https://medium.com/@jaydeepvpatil225/implementation-of-the-redis-cache-in-the-net-core-api-c8276167ef0c
 7) Cache (InMemory) - https://medium.com/@jaydeepvpatil225/implement-in-memory-cache-in-the-net-core-api-251ce58c37bc
+8) CancelationToken и асинхронные (долгие) запросы - - отмена долгих асинхронных долгих запросов

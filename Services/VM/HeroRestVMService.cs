@@ -24,6 +24,12 @@ public class HeroRestVMService
     public async Task<IEnumerable<HeroListItemVM>> GetAll()
         => _mapper.Map<IEnumerable<HeroListItemVM>>(await _heroDtoService.GetAll());
 
-    //...
+    //todo - упрощенная vm-модель (без power и stories)
+    public async Task<HeroVM> Get(int id)
+        => _mapper.Map<HeroVM>(await _heroDtoService.Get(id));
 
+    public async Task<HeroVM> GetWithExtras(int id)
+        => _mapper.Map<HeroVM>(await _heroDtoService.GetWithExtras(id));
+
+    //...
 }

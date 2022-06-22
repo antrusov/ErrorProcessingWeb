@@ -9,6 +9,7 @@ public class HeroMaps : Profile
     public HeroMaps()
     {
         CreateMap<HeroEntity, HeroDto>();
+        CreateMap<HeroEntity, HeroWithExtrasDto>();
         CreateMap<HeroDto, CreateHeroEntity>();
     }
 }

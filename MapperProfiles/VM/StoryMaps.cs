@@ -1,6 +1,6 @@
 using AutoMapper;
 using ErrorProcessingWeb.Models.Dto;
-using ErrorProcessingWeb.Models.Entity;
+using ErrorProcessingWeb.Models.VM.REST;
 
 namespace ErrorProcessingWeb.MapperProfiles.VM;
 
@@ -8,7 +8,7 @@ public class StoryMaps : Profile
 {
     public StoryMaps()
     {
-        CreateMap<StoryEntity, StoryDto>();
-        CreateMap<StoryDto, CreateStoryEntity>();
+        CreateMap<StoryDto, StoryVM>();
+        CreateMap<StoryDto, StoryListItemVM>();
     }
 }
