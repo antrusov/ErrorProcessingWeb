@@ -16,9 +16,9 @@ public class StoryEntityService
         _logger = logger;
     }
 
-    public async Task<StoryEntity> GetById(int Id) => await _db.Query("Story").Where("Id", Id).FirstOrDefaultAsync<StoryEntity>();
+    public async Task<StoryEntity> GetById(int id) => await _db.Query("Story").Where("Id", id).FirstOrDefaultAsync<StoryEntity>();
     public async Task<IEnumerable<StoryEntity>> GetAll() => await _db.Query("Story").GetAsync<StoryEntity>();
     public async Task<int> Create(CreateStoryEntity story) => await _db.Query("Story").InsertGetIdAsync<int>(story);
     public async Task Update(StoryEntity story) => await _db.Query("Story").Where("Id", story.Id).UpdateAsync(story);
-    public async Task Delete(int Id) => await _db.Query("Story").Where("Id", Id).DeleteAsync();
+    public async Task Delete(int id) => await _db.Query("Story").Where("Id", id).DeleteAsync();
 }
