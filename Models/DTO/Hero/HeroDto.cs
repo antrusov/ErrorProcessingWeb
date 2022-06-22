@@ -1,4 +1,4 @@
-namespace ErrorProcessingWeb.Models.DTO;
+namespace ErrorProcessingWeb.Models.Dto;
 
 public class HeroDto
 {

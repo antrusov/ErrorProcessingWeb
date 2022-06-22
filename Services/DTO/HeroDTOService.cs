@@ -1,9 +1,9 @@
 using AutoMapper;
 using ErrorProcessingWeb.Services.Entity;
 using ErrorProcessingWeb.Models.Entity;
-using ErrorProcessingWeb.Models.DTO;
+using ErrorProcessingWeb.Models.Dto;
 
-namespace ErrorProcessingWeb.Services.DTO;
+namespace ErrorProcessingWeb.Services.Dto;
 
 public class HeroDtoService
 {

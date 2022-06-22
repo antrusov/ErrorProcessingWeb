@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using ErrorProcessingWeb.Services.DTO;
+using ErrorProcessingWeb.Services.Dto;
 
 namespace ErrorProcessingWeb.Extensions;
 

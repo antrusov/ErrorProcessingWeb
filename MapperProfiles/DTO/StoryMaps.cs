@@ -1,6 +1,6 @@
 using AutoMapper;
 
-namespace ErrorProcessingWeb.MapperProfiles.DTO;
+namespace ErrorProcessingWeb.MapperProfiles.Dto;
 
 public class StoryMaps : Profile
 {

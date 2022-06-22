@@ -1,6 +1,6 @@
 using ErrorProcessingWeb.Models.Enums;
 
-namespace ErrorProcessingWeb.Models.DTO;
+namespace ErrorProcessingWeb.Models.Dto;
 
 public class PowerDto
 {

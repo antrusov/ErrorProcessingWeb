@@ -1,6 +1,6 @@
 using AutoMapper;
-using ErrorProcessingWeb.Services.DTO;
-using ErrorProcessingWeb.Models.DTO;
+using ErrorProcessingWeb.Services.Dto;
+using ErrorProcessingWeb.Models.Dto;
 using ErrorProcessingWeb.Models.VM.REST;
 
 namespace ErrorProcessingWeb.Services.VM.REST;

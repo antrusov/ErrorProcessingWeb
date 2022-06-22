@@ -1,8 +1,8 @@
 using AutoMapper;
 using ErrorProcessingWeb.Models.Entity;
-using ErrorProcessingWeb.Models.DTO;
+using ErrorProcessingWeb.Models.Dto;
 
-namespace ErrorProcessingWeb.MapperProfiles.DTO;
+namespace ErrorProcessingWeb.MapperProfiles.Dto;
 
 public class HeroMaps : Profile
 {
