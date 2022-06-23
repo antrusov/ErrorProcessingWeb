@@ -45,9 +45,9 @@ public class HeroController : ControllerBase
     /// </summary>
     /// <returns>Супергерой c дополнительными данными.</returns>
     [HttpGet("get-with-extras/{id}")]
-    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(HeroVM))]
+    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(HeroWithExtrasVM))]
     [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(InternalServerErrorVM))]
-    public async Task<ActionResult<HeroVM>> GetWithExtras (int id)
+    public async Task<ActionResult<HeroWithExtrasVM>> GetWithExtras (int id)
         => Ok(await _heroRestVMService.GetWithExtras(id));
 
     //Update

@@ -9,5 +9,6 @@ public class PowerMaps : Profile
     public PowerMaps()
     {
         CreateMap<PowerDto, PowerVM>();
+        CreateMap<PowerDto, HeroPowerVM>();
     }
 }

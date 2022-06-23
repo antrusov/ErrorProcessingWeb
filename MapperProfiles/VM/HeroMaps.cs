@@ -8,8 +8,9 @@ public class HeroMaps : Profile
 {
     public HeroMaps()
     {
-        CreateMap<HeroDto, HeroVM>();
         CreateMap<HeroDto, HeroListItemVM>();
-        CreateMap<HeroWithExtrasDto, HeroVM>();
+        CreateMap<HeroDto, HeroVM>();
+        CreateMap<HeroDto, HeroWithExtrasVM>();
+        CreateMap<HeroWithExtrasDto, HeroWithExtrasVM>();
     }
 }

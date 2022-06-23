@@ -9,6 +9,7 @@ public class StoryMaps : Profile
     public StoryMaps()
     {
         CreateMap<StoryDto, StoryVM>();
+        CreateMap<StoryDto, HeroStoryVM>();
         CreateMap<StoryDto, StoryListItemVM>();
     }
 }
