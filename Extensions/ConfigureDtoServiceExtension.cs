@@ -11,6 +11,7 @@ public static class ConfigureDtoServiceExtension
     public static void ConfigureDtoServices(this IServiceCollection services)
     {
         services.AddTransient<HeroDtoService>();
-        //...
+        services.AddTransient<PowerDtoService>();
+        services.AddTransient<StoryDtoService>();
     }
 }

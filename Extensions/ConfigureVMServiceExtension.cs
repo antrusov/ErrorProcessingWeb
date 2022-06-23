@@ -11,6 +11,7 @@ public static class ConfigureVMServiceExtension
     public static void ConfigureVMServices(this IServiceCollection services)
     {
         services.AddTransient<HeroRestVMService>();
-        //...
+        services.AddTransient<PowerRestVMService>();
+        services.AddTransient<StoryRestVMService>();
     }
 }
