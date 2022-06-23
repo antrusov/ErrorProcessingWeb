@@ -35,7 +35,6 @@ public class HeroController : ControllerBase
     /// </summary>
     /// <returns>Супергерой.</returns>
     [HttpGet("{id}")]
-    [HttpGet("get/{id}")]
     [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(HeroVM))]
     [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(InternalServerErrorVM))]
     public async Task<ActionResult<HeroVM>> Get (int id)
@@ -51,17 +50,37 @@ public class HeroController : ControllerBase
     public async Task<ActionResult<HeroWithExtrasVM>> GetWithExtras (int id)
         => Ok(await _heroRestVMService.GetWithExtras(id));
 
-    //Create
     /// <summary>
-    /// Получить супергероя.
+    /// Создать супергероя.
     /// </summary>
-    /// <returns>Супергерой.</returns>
+    /// <returns>Идентификатор созданного героя.</returns>
     [HttpPut]
     [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(int))]
     [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(InternalServerErrorVM))]
     public async Task<ActionResult<int>> Create (HeroCreateVM heroCreate)
         => Ok(await _heroRestVMService.Create(heroCreate));
 
-    //Update
-    //Delete
+    /// <summary>
+    /// Изменить супергероя.
+    /// </summary>
+    [HttpPost]
+    [ProducesResponseType(StatusCodes.Status204NoContent)]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(InternalServerErrorVM))]
+    public async Task<ActionResult> Update (HeroUpdateVM heroUpdate)
+    {
+        await _heroRestVMService.Update(heroUpdate);
+        return NoContent();
+    }
+
+    /// <summary>
+    /// Удалить супергероя.
+    /// </summary>
+    [HttpDelete("{id}")]
+    [ProducesResponseType(StatusCodes.Status204NoContent)]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(InternalServerErrorVM))]
+    public async Task<ActionResult> Delete (int id)
+    {
+        await _heroRestVMService.Delete(id);
+        return NoContent();
+    }
 }

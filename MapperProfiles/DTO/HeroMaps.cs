@@ -11,5 +11,6 @@ public class HeroMaps : Profile
         CreateMap<HeroEntity, HeroDto>();
         CreateMap<HeroEntity, HeroWithExtrasDto>();
         CreateMap<HeroDto, CreateHeroEntity>();
+        CreateMap<HeroDto, HeroEntity>();
     }
 }

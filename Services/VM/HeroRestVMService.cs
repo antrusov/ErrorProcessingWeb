@@ -33,5 +33,9 @@ public class HeroRestVMService
     public async Task<int> Create(HeroCreateVM heroCreate)
         => await _heroDtoService.Create(_mapper.Map<HeroDto>(heroCreate));
 
-    //...
+    public async Task Delete(int id)
+        => await _heroDtoService.Delete(id);
+
+    public async Task Update(HeroUpdateVM heroUpdate)
+        => await _heroDtoService.Update(_mapper.Map<HeroDto>(heroUpdate));
 }
