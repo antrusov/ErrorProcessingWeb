@@ -34,6 +34,7 @@ public class HeroController : ControllerBase
     /// Получить супергероя.
     /// </summary>
     /// <returns>Супергерой.</returns>
+    [HttpGet("{id}")]
     [HttpGet("get/{id}")]
     [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(HeroVM))]
     [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(InternalServerErrorVM))]
@@ -50,7 +51,17 @@ public class HeroController : ControllerBase
     public async Task<ActionResult<HeroWithExtrasVM>> GetWithExtras (int id)
         => Ok(await _heroRestVMService.GetWithExtras(id));
 
+    //Create
+    /// <summary>
+    /// Получить супергероя.
+    /// </summary>
+    /// <returns>Супергерой.</returns>
+    [HttpPut]
+    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(int))]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(InternalServerErrorVM))]
+    public async Task<ActionResult<int>> Create (HeroCreateVM heroCreate)
+        => Ok(await _heroRestVMService.Create(heroCreate));
+
     //Update
     //Delete
-    //Create
 }

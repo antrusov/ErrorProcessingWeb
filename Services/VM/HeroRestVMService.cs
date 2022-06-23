@@ -30,5 +30,8 @@ public class HeroRestVMService
     public async Task<HeroWithExtrasVM> GetWithExtras(int id)
         => _mapper.Map<HeroWithExtrasVM>(await _heroDtoService.GetWithExtras(id));
 
+    public async Task<int> Create(HeroCreateVM heroCreate)
+        => await _heroDtoService.Create(_mapper.Map<HeroDto>(heroCreate));
+
     //...
 }
