@@ -9,6 +9,8 @@ public class StoryMaps : Profile
     public StoryMaps()
     {
         CreateMap<StoryEntity, StoryDto>();
+        CreateMap<StoryEntity, StoryWithExtrasDto>();
         CreateMap<StoryDto, CreateStoryEntity>();
+        CreateMap<StoryDto, StoryEntity>();
     }
 }

@@ -9,6 +9,7 @@ public class PowerMaps : Profile
     public PowerMaps()
     {
         CreateMap<PowerEntity, PowerDto>();
+        CreateMap<PowerEntity, PowerWithHeroIdDto>();
         CreateMap<PowerWithHeroIdDto, CreatePowerEntity>();
         CreateMap<PowerDto, UpdatePowerEntity>();
     }

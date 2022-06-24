@@ -33,6 +33,7 @@ public class HeroRestVMService
     public async Task<int> Create(HeroCreateVM heroCreate)
         => await _heroDtoService.Create(_mapper.Map<HeroDto>(heroCreate));
 
+    //todo: удалить суперсилы
     public async Task Delete(int id)
         => await _heroDtoService.Delete(id);
 

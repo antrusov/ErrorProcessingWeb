@@ -25,7 +25,7 @@ public class PowerRestVMService
         => _mapper.Map<IEnumerable<PowerVM>>(await _powerDtoService.GetAll());
 
     public async Task<IEnumerable<HeroPowerVM>> GetByHeroId(int heroId)
-        => _mapper.Map<IEnumerable<HeroPowerVM>>(await _powerDtoService.GetByHeroId(heroId)); //todo
+        => _mapper.Map<IEnumerable<HeroPowerVM>>(await _powerDtoService.GetByHeroId(heroId));
 
     public async Task<PowerVM> Get(int id)
         => _mapper.Map<PowerVM>(await _powerDtoService.Get(id));
