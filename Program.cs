@@ -1,7 +1,7 @@
 using AutoMapper;
 using ErrorProcessingWeb.Extensions;
 
-//builder
+//builder (сервисы)
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
@@ -12,7 +12,7 @@ builder.Services.ConfigureVMServices();
 builder.Services.AddLogging(configure => configure.AddConsole());
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
-//app
+//app (middleware)
 var app = builder.Build();
 app.UseCustomExceptionHandler();
 if (app.Environment.IsDevelopment())
